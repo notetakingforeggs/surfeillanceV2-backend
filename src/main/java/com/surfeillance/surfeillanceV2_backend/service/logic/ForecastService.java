@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface ForecastService {
 List<Forecast> getAllForecasts();
+void saveAll(List<Forecast> forecasts);
 }

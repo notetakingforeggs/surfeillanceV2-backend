@@ -37,7 +37,27 @@ public class Forecast {
 //    private String windDirection;
 
 
+    public String getDate() {
+        return date;
+    }
 
+    public void setDate(String date) {
+        this.date = date;
+    }
 
+    public String getTime() {
+        return time;
+    }
 
+    public void setTime(String time) {
+        this.time = time;
+    }
+
+    public Double getWaveHeight() {
+        return waveHeight;
+    }
+
+    public void setWaveHeight(Double waveHeight) {
+        this.waveHeight = waveHeight;
+    }
 }
