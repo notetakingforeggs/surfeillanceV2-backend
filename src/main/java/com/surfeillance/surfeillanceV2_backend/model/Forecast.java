@@ -4,10 +4,13 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 
 @Data
 @Entity
+
 public class Forecast {
     // wave: height, period, direction
     //wind: speed direction(maybe gusts later)
@@ -22,13 +25,17 @@ public class Forecast {
 
     private Double waveHeight;
 
-    private Double wavePeriod;
+    public Forecast(String date, String time, double v) {
+    }
 
-    private String waveDirection;
+//    private Double wavePeriod;
 
-    private Double windSpeed;
+//    private String waveDirection;
 
-    private String windDirection;
+//    private Double windSpeed;
+
+//    private String windDirection;
+
 
 
 
