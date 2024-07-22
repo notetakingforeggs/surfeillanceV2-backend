@@ -4,8 +4,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 
 @Data
@@ -25,7 +23,7 @@ public class Forecast {
 
     private Double waveHeight;
 
-    public Forecast(String date, String time, double v) {
+    public Forecast(String date, String time, double waveHeight) {
     }
 
 //    private Double wavePeriod;

@@ -1,3 +1,7 @@
+// This all put into the service implementation
+
+
+/*
 package com.surfeillance.surfeillanceV2_backend.service.logic;
 
 import com.surfeillance.surfeillanceV2_backend.model.Forecast;
@@ -21,3 +25,4 @@ public class ForecastListBuilder {
     }
 
 }
+*/
