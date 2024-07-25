@@ -1,7 +1,7 @@
 package com.surfeillance.surfeillanceV2_backend.Scheduler;
 
 import com.surfeillance.surfeillanceV2_backend.model.Spot;
-import com.surfeillance.surfeillanceV2_backend.service.api.waves.HourlyWaveData;
+import com.surfeillance.surfeillanceV2_backend.service.api.waves.DTO.HourlyWaveData;
 import com.surfeillance.surfeillanceV2_backend.service.api.waves.WavesDAO;
 import com.surfeillance.surfeillanceV2_backend.service.logic.ForecastService;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,4 +1,4 @@
-package com.surfeillance.surfeillanceV2_backend.service.api.waves;
+package com.surfeillance.surfeillanceV2_backend.service.api.waves.DTO;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 

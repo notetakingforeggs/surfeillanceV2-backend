@@ -1,10 +1,8 @@
 package com.surfeillance.surfeillanceV2_backend.service.api.waves;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.surfeillance.surfeillanceV2_backend.service.api.waves.DTO.HourlyWaveData;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Repository;
-import org.springframework.web.client.RestTemplate;
 
 import java.io.IOException;
 import java.net.URI;
