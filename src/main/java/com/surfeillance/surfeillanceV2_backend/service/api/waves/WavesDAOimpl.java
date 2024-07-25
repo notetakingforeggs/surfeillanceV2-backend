@@ -22,7 +22,7 @@ public class WavesDAOimpl implements WavesDAO {
 
     String BASE_URL_START = "https://marine-api.open-meteo.com/v1/marine?latitude=";
     String BASE_URL_MID = "&longitude=";
-    String BASE_URL_END = "&hourly=wave_height&wind_speed_unit=mph&timezone=GMT&forecast_days=1&models=meteofrance_wave";
+    String BASE_URL_END = "&hourly=wave_height,wave_direction,wave_period&wind_speed_unit=mph&timezone=GMT&forecast_days=1&models=meteofrance_wave";
 
 
     @Override
