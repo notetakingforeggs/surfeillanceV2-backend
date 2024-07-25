@@ -10,7 +10,7 @@ public interface ForecastService {
 
 List<Forecast> getAllForecasts();
 
-void saveAll(HourlyWaveData hourlyWaveData);
+Boolean saveAll(HourlyWaveData hourlyWaveData);
 
-void deleteAll();
+Boolean deleteAll();
 }

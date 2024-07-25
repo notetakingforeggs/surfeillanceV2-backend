@@ -27,7 +27,7 @@ public class ForecastServiceImpl implements ForecastService {
     }
 
     @Override
-    public void saveAll(HourlyWaveData waveData) {
+    public Boolean saveAll(HourlyWaveData waveData) {
         List<Forecast> forecasts = new ArrayList<>();
         for (int i = 0; i < waveData.hourly().time().length; i++) {
             String date = dateTimeParser.getDate(waveData.hourly().time()[i]);
@@ -36,11 +36,13 @@ public class ForecastServiceImpl implements ForecastService {
             forecasts.add(new Forecast(date, time, waveHeight));
         }
         forecastRepository.saveAll(forecasts);
+        return true;
     }
 
     @Override
-    public void deleteAll() {
+    public Boolean deleteAll() {
         forecastRepository.deleteAll();
+        return true;
     }
 
 
