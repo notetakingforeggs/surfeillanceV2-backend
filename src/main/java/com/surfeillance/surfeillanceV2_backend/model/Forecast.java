@@ -1,29 +1,35 @@
 package com.surfeillance.surfeillanceV2_backend.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @Entity
-
+@NoArgsConstructor
 public class Forecast {
     // wave: height, period, direction
     //wind: speed direction(maybe gusts later)
 
     @Id
+    @Column
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column
     private String date;
 
+    @Column
     private String time;
 
+    @Column
     private Double waveHeight;
 
-    public Forecast(String date, String time, double waveHeight) {
+
+    public Forecast(String date, String time, Double waveHeight) {
+        this.date = date;
+        this.time = time;
+        this.waveHeight = waveHeight;
     }
 
 //    private Double wavePeriod;
