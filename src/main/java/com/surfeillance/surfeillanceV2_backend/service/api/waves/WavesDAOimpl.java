@@ -46,7 +46,7 @@ public class WavesDAOimpl implements WavesDAO {
 
             HttpClient client = HttpClient.newHttpClient();
             HttpRequest request = HttpRequest.newBuilder()
-                    .uri(new URI(BASE_URL_START + latitude + BASE_URL_MID + longitude + BASE_URL_END))
+                    .uri(new URI(url))
                     .GET()
                     .build();
 
@@ -55,11 +55,12 @@ public class WavesDAOimpl implements WavesDAO {
 
             HourlyWaveData hourlyWaveData = mapper.readValue(response.body(), HourlyWaveData.class);
             System.out.println(hourlyWaveData.latitude());
-            System.out.println(hourlyWaveData.hourly().wave_height()[0]);
+            System.out.println(hourlyWaveData.HourlyWave().wave_height()[0]);
             return hourlyWaveData;
         } catch (URISyntaxException | InterruptedException | IOException e) {
-            throw new RuntimeException(e);
-
+            System.out.println("issue with waves API call");
+            e.printStackTrace();
+            return null;
         }
     }
 }

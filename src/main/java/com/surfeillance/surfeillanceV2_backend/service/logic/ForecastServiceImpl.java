@@ -28,12 +28,12 @@ public class ForecastServiceImpl implements ForecastService {
     @Override
     public Boolean saveAll(HourlyWaveData waveData) {
         List<Forecast> forecasts = new ArrayList<>();
-        for (int i = 0; i < waveData.hourly().time().length; i++) {
-            String date = dateTimeParser.getDate(waveData.hourly().time()[i]);
-            String time = dateTimeParser.getTime(waveData.hourly().time()[i]);
-            Double waveHeight = waveData.hourly().wave_height()[i];
-            Double waveDirection = waveData.hourly().wave_direction()[i];
-            Double wavePeriod = waveData.hourly().wave_period()[i];
+        for (int i = 0; i < waveData.HourlyWave().time().length; i++) {
+            String date = dateTimeParser.getDate(waveData.HourlyWave().time()[i]);
+            String time = dateTimeParser.getTime(waveData.HourlyWave().time()[i]);
+            Double waveHeight = waveData.HourlyWave().wave_height()[i];
+            Double waveDirection = waveData.HourlyWave().wave_direction()[i];
+            Double wavePeriod = waveData.HourlyWave().wave_period()[i];
             forecasts.add(new Forecast(date, time, waveHeight, waveDirection, wavePeriod));
         }
         forecastRepository.saveAll(forecasts);
