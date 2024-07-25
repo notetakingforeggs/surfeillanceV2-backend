@@ -23,12 +23,6 @@ public class SurfeillanceV2BackendApplication {
 
 		SpringApplication.run(SurfeillanceV2BackendApplication.class, args);
 
-//		ForecastService forecastService = new ForecastServiceImpl();
-//		WavesDAO wavesDao = new WavesDAOimpl();
-//
-//		Spot thurso = new Spot("Thurso East", 58.5927, -3.5259);
-//		forecastService.saveAll(wavesDao.getHourlyWaveData(thurso.longitude(), thurso.latitude()));
-
 	}
 
 }
