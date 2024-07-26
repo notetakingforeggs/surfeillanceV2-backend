@@ -30,11 +30,11 @@ public class ForecastScheduler {
     public void updateForecastDate(/*List<Spot> spots*/) {
 
         Spot thurso = new Spot("Thurso East", 58.5927, -3.5259);
-        List<Spot> spots = List.of(thurso);
+        Spot austi = new Spot("Austinmer", -34.3052, 150.9333);
 
+        List<Spot> spots = List.of(thurso, austi);
+        forecastService.deleteAll();
         for (Spot spot : spots) {
-
-            forecastService.deleteAll();
             forecastService.saveAll(spot.latitude(), spot.longitude());
         }
 

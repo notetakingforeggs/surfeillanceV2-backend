@@ -36,9 +36,9 @@ class ForecastServiceImplTest {
     @Test
     public void getAllForecastsTest() {
         List<Forecast> dummyForecasts = new ArrayList<>(List.of(
-                new Forecast("2020-01-01", "16:00", 1.4, 11.1, 130.1),
-                new Forecast("2020-01-01", "17:00", 1.6, 11.1, 130.1),
-                new Forecast("2020-01-01", "18:00", 1.8, 11.1, 130.1)
+                new Forecast("2020-01-01", "16:00", 1.4, 11.1, 130.1, 15.1, 120d, 20.0),
+                new Forecast("2020-01-01", "17:00", 1.6, 11.1, 130.1, 15.1, 120d, 20.0),
+                new Forecast("2020-01-01", "18:00", 1.8, 11.1, 130.1, 15.1, 120d, 20.0)
         ));
 
         //Arrange
