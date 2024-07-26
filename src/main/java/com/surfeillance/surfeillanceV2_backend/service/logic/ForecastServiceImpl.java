@@ -33,7 +33,7 @@ public class ForecastServiceImpl implements ForecastService {
     }
 
     @Override
-    public Boolean saveAll(Spot spot) {
+    public Boolean saveAllForecasts(Spot spot) {
 
 
         HourlyWaveData waveData = wavesDAO.getHourlyWaveData(spot.getLatitude(), spot.getLongitude());

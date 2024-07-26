@@ -9,9 +9,14 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class SpotServiceImpl implements SpotService{
+public class SpotServiceImpl implements SpotService {
     @Autowired
     SpotRepository spotRepository;
+
+    @Override
+    public List<Spot> getAllSpots() {
+        return spotRepository.findAll();
+    }
 
     @Override
     public Boolean saveAll(List<Spot> spots) {
