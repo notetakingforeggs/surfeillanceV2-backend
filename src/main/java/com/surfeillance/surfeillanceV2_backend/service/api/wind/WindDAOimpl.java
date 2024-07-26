@@ -18,12 +18,13 @@ public class WindDAOimpl implements WindDAO {
 
     String BASE_URL_START = "https://api.open-meteo.com/v1/forecast?latitude=";
     String BASE_URL_MID = "&longitude=";
-    String BASE_URL_END = "&hourly=wind_speed_10m,wind_direction_10m,wind_gusts_10m&wind_speed_unit=mph&forecast_days=1";
+    String BASE_URL_END = "&hourly=wind_speed_10m,wind_direction_10m,wind_gusts_10m&wind_speed_unit=mph&forecast_days=";
+    String DAYS = "1";
 
     @Override
     public HourlyWindData getHourlyWindData(Double latitude, Double longitude) {
 
-        String url = BASE_URL_START + latitude + BASE_URL_MID + longitude + BASE_URL_END;
+        String url = BASE_URL_START + latitude + BASE_URL_MID + longitude + BASE_URL_END + DAYS;
 
         try {
             HttpResponse<String> response;

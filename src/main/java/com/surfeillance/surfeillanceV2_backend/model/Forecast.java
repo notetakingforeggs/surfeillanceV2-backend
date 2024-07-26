@@ -31,56 +31,24 @@ public class Forecast {
     @Column
     private Double wavePeriod;
 
-    public Forecast(String date, String time, Double waveHeight, Double wavePeriod, Double waveDirection) {
+    @Column
+    private Double windSpeed;
+
+    @Column
+    private Double windDirection;
+
+    @Column
+    private Double windGusts;
+
+    public Forecast(String date, String time, Double waveHeight, Double waveDirection, Double wavePeriod, Double windSpeed, Double windDirection, Double windGusts) {
         this.date = date;
         this.time = time;
         this.waveHeight = waveHeight;
-        this.wavePeriod = wavePeriod;
         this.waveDirection = waveDirection;
-    }
-
-    //    private Double windSpeed;
-
-//    private String windDirection;
-
-
-    public String getDate() {
-        return date;
-    }
-
-    public void setDate(String date) {
-        this.date = date;
-    }
-
-    public String getTime() {
-        return time;
-    }
-
-    public void setTime(String time) {
-        this.time = time;
-    }
-
-    public Double getWaveHeight() {
-        return waveHeight;
-    }
-
-    public void setWaveHeight(Double waveHeight) {
-        this.waveHeight = waveHeight;
-    }
-
-    public Double getWavePeriod() {
-        return wavePeriod;
-    }
-
-    public void setWavePeriod(Double wavePeriod) {
         this.wavePeriod = wavePeriod;
+        this.windSpeed = windSpeed;
+        this.windDirection = windDirection;
+        this.windGusts = windGusts;
     }
 
-    public Double getWaveDirection() {
-        return waveDirection;
-    }
-
-    public void setWaveDirection(Double waveDirection) {
-        this.waveDirection = waveDirection;
-    }
 }

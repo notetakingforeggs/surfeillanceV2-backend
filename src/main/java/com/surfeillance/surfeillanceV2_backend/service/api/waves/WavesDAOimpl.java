@@ -20,13 +20,13 @@ public class WavesDAOimpl implements WavesDAO {
 
     String BASE_URL_START = "https://marine-api.open-meteo.com/v1/marine?latitude=";
     String BASE_URL_MID = "&longitude=";
-    String BASE_URL_END = "&hourly=wave_height,wave_direction,wave_period&wind_speed_unit=mph&timezone=GMT&forecast_days=1&models=meteofrance_wave";
-
+    String BASE_URL_END = "&hourly=wave_height,wave_direction,wave_period&wind_speed_unit=mph&timezone=GMT&forecast_days=";
+    String DAYS = "1";
 
     @Override
-    public HourlyWaveData getHourlyWaveData(Double longitude, Double latitude) {
+    public HourlyWaveData getHourlyWaveData(Double latitude, Double longitude) {
 
-        String url = BASE_URL_START + longitude + BASE_URL_MID + latitude + BASE_URL_END;
+        String url = BASE_URL_START + latitude + BASE_URL_MID + longitude + BASE_URL_END + DAYS;
 //        try {
 //            System.out.println(url);
 //            return restTemplate.getForObject(url, HourlyWaveData.class);
