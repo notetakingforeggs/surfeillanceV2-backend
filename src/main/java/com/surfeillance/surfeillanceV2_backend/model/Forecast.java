@@ -14,8 +14,12 @@ public class Forecast {
     @Id
     @Column
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long forecastId;
 
+    @ManyToOne
+    @JoinColumn(name = "spotId" )
+    private Spot spot;
+    
     @Column
     private String date;
 
@@ -40,7 +44,8 @@ public class Forecast {
     @Column
     private Double windGusts;
 
-    public Forecast(String date, String time, Double waveHeight, Double waveDirection, Double wavePeriod, Double windSpeed, Double windDirection, Double windGusts) {
+    public Forecast(Spot spot, String date, String time, Double waveHeight, Double waveDirection, Double wavePeriod, Double windSpeed, Double windDirection, Double windGusts) {
+        this.spot = spot;
         this.date = date;
         this.time = time;
         this.waveHeight = waveHeight;

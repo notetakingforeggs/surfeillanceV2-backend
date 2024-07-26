@@ -1,6 +1,7 @@
 package com.surfeillance.surfeillanceV2_backend.service.logic;
 
 import com.surfeillance.surfeillanceV2_backend.model.Forecast;
+import com.surfeillance.surfeillanceV2_backend.model.Spot;
 import com.surfeillance.surfeillanceV2_backend.repository.ForecastRepository;
 import com.surfeillance.surfeillanceV2_backend.service.api.waves.DTO.HourlyWaveData;
 import com.surfeillance.surfeillanceV2_backend.service.api.waves.WavesDAO;
@@ -32,11 +33,11 @@ public class ForecastServiceImpl implements ForecastService {
     }
 
     @Override
-    public Boolean saveAll(Double latitude, Double longitude) {
+    public Boolean saveAll(Spot spot) {
 
 
-        HourlyWaveData waveData = wavesDAO.getHourlyWaveData(latitude,longitude);
-        HourlyWindData windData = windDAO.getHourlyWindData(latitude, longitude);
+        HourlyWaveData waveData = wavesDAO.getHourlyWaveData(spot.getLatitude(), spot.getLongitude());
+        HourlyWindData windData = windDAO.getHourlyWindData(spot.getLatitude(), spot.getLongitude());
 
         List<Forecast> forecasts = new ArrayList<>();
         for (int i = 0; i < waveData.HourlyWave().time().length; i++) {
@@ -50,7 +51,7 @@ public class ForecastServiceImpl implements ForecastService {
             Double windDirection = windData.hourly().wind_direction_10m()[i];
             Double windGusts = windData.hourly().wind_gusts_10m()[i];
 
-            forecasts.add(new Forecast(date, time, waveHeight, waveDirection, wavePeriod, windSpeed, windDirection, windGusts));
+            forecasts.add(new Forecast(spot, date, time, waveHeight, waveDirection, wavePeriod, windSpeed, windDirection, windGusts));
         }
         forecastRepository.saveAll(forecasts);
         return true;

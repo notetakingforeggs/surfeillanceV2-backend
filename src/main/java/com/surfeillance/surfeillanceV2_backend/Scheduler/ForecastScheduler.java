@@ -6,6 +6,7 @@ import com.surfeillance.surfeillanceV2_backend.service.api.waves.WavesDAO;
 import com.surfeillance.surfeillanceV2_backend.service.api.wind.DTO.HourlyWindData;
 import com.surfeillance.surfeillanceV2_backend.service.api.wind.WindDAO;
 import com.surfeillance.surfeillanceV2_backend.service.logic.ForecastService;
+import com.surfeillance.surfeillanceV2_backend.service.logic.SpotService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
@@ -19,10 +20,15 @@ public class ForecastScheduler {
     private ForecastService forecastService;
 
     @Autowired
+    SpotService spotService;
+
+    @Autowired
     private WavesDAO wavesDAO;
 
     @Autowired
     private WindDAO windDAO;
+
+
 
 
     @Scheduled(fixedRate = 60000) // run every 5 mins for testing - use cron notation to run at 6 hour intervals in prod
@@ -33,9 +39,13 @@ public class ForecastScheduler {
         Spot austi = new Spot("Austinmer", -34.3052, 150.9333);
 
         List<Spot> spots = List.of(thurso, austi);
+        // TODO this spot list wouldnt be scheduled actually but for now is ok to test with it.
+        spotService.deleteAll();
+        spotService.saveAll(spots);
+
         forecastService.deleteAll();
         for (Spot spot : spots) {
-            forecastService.saveAll(spot.latitude(), spot.longitude());
+            forecastService.saveAll(spot);
         }
 
     }
