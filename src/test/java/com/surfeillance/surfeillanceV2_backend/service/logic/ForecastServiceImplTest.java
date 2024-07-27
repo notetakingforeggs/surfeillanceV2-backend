@@ -1,6 +1,7 @@
 package com.surfeillance.surfeillanceV2_backend.service.logic;
 
 import com.surfeillance.surfeillanceV2_backend.model.Forecast;
+import com.surfeillance.surfeillanceV2_backend.model.Spot;
 import com.surfeillance.surfeillanceV2_backend.repository.ForecastRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -36,9 +37,9 @@ class ForecastServiceImplTest {
     @Test
     public void getAllForecastsTest() {
         List<Forecast> dummyForecasts = new ArrayList<>(List.of(
-                new Forecast("2020-01-01", "16:00", 1.4, 11.1, 130.1, 15.1, 120d, 20.0),
-                new Forecast("2020-01-01", "17:00", 1.6, 11.1, 130.1, 15.1, 120d, 20.0),
-                new Forecast("2020-01-01", "18:00", 1.8, 11.1, 130.1, 15.1, 120d, 20.0)
+                new Forecast(new Spot(),"2020-01-01", "16:00", 1.4, 11.1, 130.1, 15.1, 120d, 20.0),
+                new Forecast(new Spot(), "2020-01-01", "17:00", 1.6, 11.1, 130.1, 15.1, 120d, 20.0),
+                new Forecast(new Spot(), "2020-01-01", "18:00", 1.8, 11.1, 130.1, 15.1, 120d, 20.0)
         ));
 
         //Arrange

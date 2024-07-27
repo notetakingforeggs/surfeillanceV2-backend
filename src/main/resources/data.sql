@@ -1,4 +1,4 @@
-DELETE FROM spot;
+--DELETE FROM spot;
 
 INSERT INTO spot(spot_id, name, latitude, longitude)
 VALUES

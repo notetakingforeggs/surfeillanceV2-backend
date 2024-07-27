@@ -3,23 +3,27 @@ package com.surfeillance.surfeillanceV2_backend.model;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.NonNull;
+import org.hibernate.annotations.CreationTimestamp;
 
 @Data
 @Entity
 @NoArgsConstructor
 public class Forecast {
-    // wave: height, period, direction
-    //wind: speed direction(maybe gusts later)
 
     @Id
     @Column
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long forecastId;
 
+    @Column(name = "creation_time", updatable = false)
+    @CreationTimestamp
+    private String creationTime;
+
     @ManyToOne
-    @JoinColumn(name = "spotId" )
+    @JoinColumn(name = "spotId")
     private Spot spot;
-    
+
     @Column
     private String date;
 
