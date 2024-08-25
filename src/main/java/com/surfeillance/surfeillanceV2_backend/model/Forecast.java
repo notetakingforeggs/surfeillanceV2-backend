@@ -1,5 +1,7 @@
 package com.surfeillance.surfeillanceV2_backend.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.surfeillance.surfeillanceV2_backend.util.RatingCalculator;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -48,6 +50,10 @@ public class Forecast {
     @Column
     private Double windGusts;
 
+    @Column
+    private Boolean isDecent;
+
+
     public Forecast(Spot spot, String date, String time, Double waveHeight, Double waveDirection, Double wavePeriod, Double windSpeed, Double windDirection, Double windGusts) {
         this.spot = spot;
         this.date = date;
@@ -58,6 +64,16 @@ public class Forecast {
         this.windSpeed = windSpeed;
         this.windDirection = windDirection;
         this.windGusts = windGusts;
+        this.isDecent = null;
+    }
+
+    public void updateRating(){
+        RatingCalculator ratingCalculator = new RatingCalculator();
+        if(ratingCalculator.isDecent(this)){
+            this.isDecent = true;
+        }else{
+            this.isDecent = false;
+        }
     }
 
 }

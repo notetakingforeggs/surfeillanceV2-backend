@@ -51,7 +51,9 @@ public class ForecastServiceImpl implements ForecastService {
             Double windDirection = windData.hourly().wind_direction_10m()[i];
             Double windGusts = windData.hourly().wind_gusts_10m()[i];
 
-            forecasts.add(  new Forecast(spot, date, time, waveHeight, waveDirection, wavePeriod, windSpeed, windDirection, windGusts));
+            Forecast forecast = new Forecast(spot, date, time, waveHeight, waveDirection, wavePeriod, windSpeed, windDirection, windGusts);
+            forecast.updateRating();
+            forecasts.add(forecast);
         }
         forecastRepository.saveAll(forecasts);
         return true;
