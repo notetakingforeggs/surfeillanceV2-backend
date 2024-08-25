@@ -23,9 +23,13 @@ public class Spot {
     @Column
     private Double longitude;
 
-    public Spot(String name, Double latitude, Double longitude) {
+    @Column
+    private Double beachFacing;
+
+    public Spot(String name, Double latitude, Double longitude, Double beachFacing) {
         this.name = name;
         this.latitude = latitude;
         this.longitude = longitude;
+        this.beachFacing = beachFacing;
     }
 }

@@ -27,7 +27,7 @@ public class ForecastScheduler {
     private WindDAO windDAO;
 
 
-    @Scheduled(fixedRate = 60000) // run every 5 mins for testing - use cron notation to run at 6 hour intervals in prod
+    @Scheduled(fixedRate = 600000) // run every 5 mins for testing - use cron notation to run at 6 hour intervals in prod
     // @Scheduled(cron = "0 */6 * * *")
     public void updateForecastDate(/*List<Spot> spots*/) {
 
