@@ -1,9 +1,11 @@
 # :surfer: Surfeillance-V2
 
-Welcome to my rewriting of **Surfeillance**! In during our Northcoders Java Bootcamp I took a role focussing primarily on the android frThis was created during my time at the Northcoders Bootcamp and is written in Javaontend. This project is partly to give me a chance to write the backend, and also implement a slightly different featureset.
-I have left out the auth, and the idea of logging trips. The function of this is to streamline my repeated browsing of a selection of surf forecasts across a few apps to give me the skinny as to whether there is feasible local surf near me on the horizon.
+Welcome to my rewriting of **Surfeillance**! During our group project Northcoders Java Bootcamp I took a role focussing primarily on the android frontend. This project is partly to give me a chance to write the backend, and also implement a slightly different featureset.
+- The main thrust of this is to streamline my repeated browsing of a selection of surf forecasts across a few apps to give me the skinny as to whether there is feasible local surf near me on the horizon.
+- I have made the intentional decision to not implement Auth - seeing this as something that can be added later if it starts getting use by others.
+- I have chosen not to continue and the idea of logging trips, seeing this as a potential future feature. 
 
-It showcases various programming concepts and techniques including Test Driven Development (TDD), Object Oriented Programming (OOP), and Functional Programming in Java.
+This project showcases various programming concepts and techniques including Test Driven Development (TDD), Object Oriented Programming (OOP), and Creating a REST-ful .
 
 # 📚 Table of Contents
 - 
@@ -17,12 +19,13 @@ It showcases various programming concepts and techniques including Test Driven D
 
 
 ## <a id="about-the-project"></a>🚀 About the Project
-The Mars Rover Project is a simulation intended to mimic a program that could be used to control semi-autonomous robots on the surface of Mars. The application features a terminal-based user interface and is designed to be intuitive and user-friendly. By pressing "run", the program will guide you through the necessary steps to control the Mars Rover.
+Surfeillance V-2 is a surf forecasting app, that takes weather data from public APIs and transforms it into a coherent forecast for surfing conditions at particular locations. The current MVP is to provide at a glance, when the soonest decent surf is within the prediction period for the users selected locations.
 
 ## <a id = "getting-started"></a> 🛠️ Getting Started
 
 ### Prerequisites
 
+This program is currently set up only to run in an IDE on an android VM.
 Before you begin, ensure you have the following installed on your machine:
 
 - Java JDK 8 or higher
@@ -51,12 +54,39 @@ In IntelliJ IDEA, the project should automatically import Maven dependencies.
  
 1. **Run the application**
 
-  
+    Some of the files in git-ignore you will need to add yourself. In the application.properties file please ensure you have the following
+```
+spring.application.name=surfeillanceV2-backend
+spring.devtools.restart.enabled=true
+#spring.sql.init.mode=always
+spring.profiles.active=dev
+spring.jpa.show-sql=true
+```
+The first time you run the backend, you will need to un-comment out the line "inti.mode=always" 
+
+and in your application-dev.properties file the following:
+
+```
+spring.datasource.url=jdbc:postgresql://localhost:5432/surfeillancev2
+spring.datasource.driver=cdata.jdbc.postgresql.PostgreSQLDriver
+
+spring.datasource.username= ** your username **
+spring.datasource.password=s  ** your password **
+spring.jpa.hibernate.ddl-auto=update
+
+```
+The first time you run the code you will need to set the last line in the above code block as ...hibernate.ddl-auto= *create*
+
+This lets hibernate create the db and tables, and then use the data.sql file to populate the spots. If you want to select your own set of spots, you can edit the data.sql file for now. After having run the program once, change these back to how they were originally and run it again and that should work. To run the program:
+   
    In IntelliJ IDEA,  right-click the `Main` class and select `Run 'Main'`.
 
-2. **Follow the on-screen instructions**
+2. **Check the terminal**
 
-   The terminal interface will guide you through the process of controlling the Mars Rover.
+   The terminal interface/Run box will display the spring logo and log a bunch of API calls and hibernate/sql queries. Provided there are no errors this is your backend up and running on localhost 8080.
+
+3.Run the front-end
+// TODO
 
 ## <a id = "built-with"></a>  🛠️ Built With
 
