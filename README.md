@@ -1,11 +1,13 @@
 # :surfer: Surfeillance-V2
 
-Welcome to my rewriting of **Surfeillance**! During our group project Northcoders Java Bootcamp I took a role focussing primarily on the android frontend. This project is partly to give me a chance to write the backend, and also implement a slightly different featureset.
+### A Surf Conditions Forecasting App
+
+Welcome to my rewriting of **Surfeillance**! (seem my other repo) During our group project Northcoders Java Bootcamp I took a role focussing primarily on the android frontend. This project is partly to give me a chance to write the backend, and also implement a slightly different featureset.
 - The main thrust of this is to streamline my repeated browsing of a selection of surf forecasts across a few apps to give me the skinny as to whether there is feasible local surf near me on the horizon.
 - I have made the intentional decision to not implement Auth - seeing this as something that can be added later if it starts getting use by others.
 - I have chosen not to continue and the idea of logging trips, seeing this as a potential future feature. 
 
-This project showcases various programming concepts and techniques including Test Driven Development (TDD), Object Oriented Programming (OOP), and Creating a REST-ful .
+This project showcases various programming concepts and techniques including Test Driven Development (TDD), Object Oriented Programming (OOP), and Creating a REST-ful API.
 
 # 📚 Table of Contents
 - 
@@ -32,7 +34,7 @@ Before you begin, ensure you have the following installed on your machine:
 - Maven
 - An IDE (preferably IntelliJ IDEA)
 - postgres installed with nothing taking up the 2345 localhost port
-- nothing already taking up the localhost 8080 port that spring 
+- nothing already taking up the localhost 8080 port that spring boot will use.
 
 ### Installation
 
@@ -94,6 +96,7 @@ This lets hibernate create the db and tables, and then use the data.sql file to 
 - **J-Unit** - Testing Framework. 
 - **Maven** - Dependency management.
 - **IntelliJ IDEA** - Recommended IDE for running and testing the project.
+- **Hibernate ORM** - Objec Relational Mapper do deal with SQL queries.
   
 
 ## <a id = "acknowledgements" ></a> 🙏 Acknowledgements
