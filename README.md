@@ -33,7 +33,7 @@ Before you begin, ensure you have the following installed on your machine:
 - Java JDK 8 or higher
 - Maven
 - An IDE (preferably IntelliJ IDEA)
-- postgres installed with nothing taking up the 2345 localhost port
+- postgres installed with nothing taking up the 5432 localhost port
 - nothing already taking up the localhost 8080 port that spring boot will use.
 
 ### Installation
