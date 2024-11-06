@@ -1,0 +1,9 @@
+2024-09-09 11:48:31.579192+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SPOT" not found (this database is empty); SQL statement:
+select s1_0.spot_id,s1_0.beach_facing,s1_0.latitude,s1_0.longitude,s1_0.name from spot s1_0 [42104-224]
+2024-09-09 11:49:49.811231+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SPOT" not found (this database is empty); SQL statement:
+select s1_0.spot_id,s1_0.beach_facing,s1_0.latitude,s1_0.longitude,s1_0.name from spot s1_0 [42104-224]
+2024-09-09 11:53:41.701286+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SPOT" not found (this database is empty); SQL statement:
+select s1_0.spot_id,s1_0.beach_facing,s1_0.latitude,s1_0.longitude,s1_0.name from spot s1_0 [42104-224]
